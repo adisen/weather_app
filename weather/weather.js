@@ -1,8 +1,10 @@
 const request = require('request');
 
+const forecastApiKey = '' // Add API key from https://developer.forecast.io
+
 let getWeather = (lat, lng, callback) => {
   request({
-    url: `https://api.darksky.net/forecast/9e792fa1f9efe01ec0e7ba26312e13bd/${lat},${lng}`,
+    url: `https://api.darksky.net/forecast/${forecastApiKey}/${lat},${lng}`,
     json: true,
   }, (error, response, body) => {
     if(error) {
